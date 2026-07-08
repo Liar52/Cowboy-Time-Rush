@@ -64,12 +64,13 @@ public void StartGame()
     {
         IsPlaying = false;
         timeRemaining = 0f;
-
         TargetSpawner.Instance.StopSpawning();
-
         OnGameEnded?.Invoke();
         Debug.Log($"Partida terminada. Puntaje final: {CurrentScore}");
 
-        // Acá más adelante conectamos SupabaseManager.SubmitScore(...)
+        Supabasescoremanager.Instance.SubmitScore(CurrentScore, (success, message) =>
+        {
+            Debug.Log(success ? "Puntaje guardado en Supabase" : $"Error: {message}");
+        });
     }
 }
