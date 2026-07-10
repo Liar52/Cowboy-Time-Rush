@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -37,20 +38,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-public void StartGame()
-{
-    if (IsPlaying) return; 
+    public void StartGame()
+    {
+        Debug.Log("StartGame() se ejecutó"); // 👈 temporal
 
-    CurrentScore = 0;
-    timeRemaining = matchDuration;
-    IsPlaying = true;
+        if (IsPlaying) return;
 
-    OnScoreUpdated?.Invoke(CurrentScore);
-    OnTimerUpdated?.Invoke(timeRemaining);
-    OnGameStarted?.Invoke();
+        CurrentScore = 0;
+        timeRemaining = matchDuration;
+        IsPlaying = true;
 
-    TargetSpawner.Instance.StartSpawning();
-}
+        OnScoreUpdated?.Invoke(CurrentScore);
+        OnTimerUpdated?.Invoke(timeRemaining);
+        OnGameStarted?.Invoke();
+
+        TargetSpawner.Instance.StartSpawning();
+    }
 
     public void AddScore(int points)
     {
@@ -64,13 +67,12 @@ public void StartGame()
     {
         IsPlaying = false;
         timeRemaining = 0f;
+
         TargetSpawner.Instance.StopSpawning();
+
         OnGameEnded?.Invoke();
         Debug.Log($"Partida terminada. Puntaje final: {CurrentScore}");
 
-        Supabasescoremanager.Instance.SubmitScore(CurrentScore, (success, message) =>
-        {
-            Debug.Log(success ? "Puntaje guardado en Supabase" : $"Error: {message}");
-        });
+        // Acá más adelante conectamos SupabaseManager.SubmitScore(...)
     }
 }

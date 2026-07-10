@@ -6165,9 +6165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 859605726}
   - component: {fileID: 859605725}
-  - component: {fileID: 859605728}
-  - component: {fileID: 859605727}
-  - component: {fileID: 859605729}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6203,44 +6200,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &859605727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859605724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c203f7ae0b47a44abfdda109158ab55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AuthManager
---- !u!114 &859605728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859605724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed314c91d6d376d45b2cb215c8ed2fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SupabaseConfig
-  supabaseUrl: https://aactcenbhnziojumkzbe.supabase.co/rest/v1/
-  anonKey: sb_publishable_QGDMbjBY9O2W64A4P66vvg_dj-gOgLd
---- !u!114 &859605729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859605724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0dca79c026ed74fa8e1ccbda487944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Supabasescoremanager
 --- !u!4 &868432070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457404, guid: 3b2f560dc059d4441921a0855afbcc03, type: 3}
@@ -6631,7 +6590,6 @@ GameObject:
   - component: {fileID: 958860479}
   - component: {fileID: 958860478}
   - component: {fileID: 958860477}
-  - component: {fileID: 958860476}
   m_Layer: 5
   m_Name: Login
   m_TagString: Untagged
@@ -6639,25 +6597,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &958860476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958860475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b2256b4838f594ba60d32be98dbd8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoginUI
-  usernameInput: {fileID: 566043540}
-  passwordInput: {fileID: 517160165}
-  loginButton: {fileID: 1762753221}
-  registerButton: {fileID: 2002634444}
-  messageText: {fileID: 180049655}
-  loginPanel: {fileID: 0}
-  gamePanel: {fileID: 0}
 --- !u!114 &958860477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12218,7 +12157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875869999}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LeaderboardUI, Assembly-CSharp
         m_MethodName: RefreshLeaderboard
         m_Mode: 1
@@ -13541,7 +13480,6 @@ GameObject:
   - component: {fileID: 1875870003}
   - component: {fileID: 1875870002}
   - component: {fileID: 1875870001}
-  - component: {fileID: 1875869999}
   m_Layer: 5
   m_Name: Tabla
   m_TagString: Untagged
@@ -13549,21 +13487,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1875869999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875869998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f70c1752b1b191648af2b7a6d3d7ec2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LeaderboardUI
-  contentParent: {fileID: 372891904}
-  rowPrefab: {fileID: 1978406566}
-  topCount: 10
 --- !u!114 &1875870001
 MonoBehaviour:
   m_ObjectHideFlags: 0
